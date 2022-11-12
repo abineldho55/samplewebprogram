@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>students</title>
+</head>
+<body>
+<form method="post">
+    <table>
+        {% csrf_token %}
+        {{form.as_table}}
+        <tr>
+            <td colspan="2">
+                <input type="submit"/>
+            </td>
+        </tr>
+    </table>
+</form>
+<div class="row">
+    <div class="col-md-8">
+        {% for i in students %}
+        <center><b>{{i.studentname}}</b></center>
+        <hr/>
+        {{i.email}}
+        <hr/>
+        {{i.rollno}}
+        <hr/>
+        {{i.course}}
+        <hr/>
+        {{i.age}}
+        <hr/>
+        {{i.address}}
+        <br/>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
